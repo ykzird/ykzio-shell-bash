@@ -3,16 +3,27 @@
 ## Overview
 Ykzio Shell is a modular management tool designed to provide an interactive command-line experience using the `gum` library. It is built with Bash scripting and includes features for package management, configuration handling, and logging.
 
+## Ykzio Shell Compatibility
+
+| Operating System        | ✅ Tested | ✅ Works | 🏭 In Production |
+|------------------------|:--------:|:-------:|:----------------:|
+| Ubuntu 22.04+          | ✅       | ✅      | ❌               |
+| Debian 11+             | ✅       | ✅      | ❌               |
+| Arch Linux             | ❌       | ❌      | ❌               |
+| Fedora (38+)           | ❌       | ❌      | ❌               |
+| CentOS Stream 9        | ❌       | ❌      | ❌               |
+| macOS (Intel)          | ❌       | ❌      | ❌               |
+| macOS (Apple Silicon)  | ❌       | ❌      | ❌               |
+| Windows (7/10/11)      | ❌       | ❌      | ❌               |
+| Alpine Linux           | ❌       | ❌      | ❌               |
+
+
 ## Features
 - **Interactive Menus**: Provides a user-friendly interface for managing system updates and configurations.
 - **Package Management**: Automatically checks and installs required packages.
 - **Logging**: Logs script activities with support for different log levels (DEBUG, INFO, WARN, ERROR, TRACE).
 - **Configuration Management**: Ensures the presence of configuration files and directories.
 - **APT Lock Handling**: Waits for APT locks to be released before proceeding with package operations.
-
-## ToDo's
-- Improve look and feel off the applcation
-- Think of a way to create a one-size-fits-all binary.
 
 ## Project Structure
 ```
@@ -30,7 +41,12 @@ modules/
     menu.sh
     packages.sh
     utils.sh
+scripts/
+    docker-nuke.sh
+    install-gum.sh
+    run-docker.sh
 .env
+Dockerfile
 ```
 
 ### Key Files
@@ -48,6 +64,7 @@ modules/
   - `grep`
   - `sed`
   - `gawk`
+  - `gum` (comes with it's own install script **for ubuntu/debian**)
 
 ## Installation
 1. Clone the repository:
@@ -55,7 +72,12 @@ modules/
    git clone <repository-url>
    cd ykzio-shell
    ```
+2. Run gum install script:
+    ```bash
+    chmod +x scripts/install-gum.sh
+    ./scripts/install-gum.sh
 
+    ```
 ## Usage
 Run the main script:
 ```bash
@@ -66,10 +88,11 @@ Run the main script:
 Testing needs to be worked out more to test individual functions, for now however I look to see my scripts working, especially on a fresh machine.
 To test the script, here's how I currently do it:
 ```bash
-./run-docker.sh
+./docker-run.sh
 ```
 Done! This small script will build the docker image from the `Dockerfile`<br>
-and run it afterwards.
+and run it afterwards. To clear your machine of docker bullshit, run the script: `scripts\docker-nuke.sh`
+
 
 
 ### Command-Line Arguments

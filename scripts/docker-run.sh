@@ -6,6 +6,6 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 docker run --rm -it \
-  -v $HOME/.ssh:/root/.ssh \
-  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
+  --volume $HOME/.ssh:/root/.ssh \
+  -env GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
   ykzio-shell-bash
