@@ -7,5 +7,5 @@ if [ $? -ne 0 ]; then
 fi
 docker run --rm -it \
   --volume $HOME/.ssh:/root/.ssh \
-  -env GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
+  --env GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
   ykzio-shell-bash
