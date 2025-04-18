@@ -10,6 +10,10 @@ Ykzio Shell is a modular management tool designed to provide an interactive comm
 - **Configuration Management**: Ensures the presence of configuration files and directories.
 - **APT Lock Handling**: Waits for APT locks to be released before proceeding with package operations.
 
+## ToDo's
+- Improve look and feel off the applcation
+- Think of a way to create a one-size-fits-all binary.
+
 ## Project Structure
 ```
 Dockerfile
@@ -51,20 +55,22 @@ modules/
    git clone <repository-url>
    cd ykzio-shell
    ```
-2. Build the Docker image (optional):
-   ```bash
-   docker build -t ykzio-shell .
-   ```
-3. Ensure the required packages are installed:
-   ```bash
-   ./bin/ykzio-shell.sh --debug
-   ```
 
 ## Usage
 Run the main script:
 ```bash
 ./bin/ykzio-shell.sh
 ```
+
+## Testing
+Testing needs to be worked out more to test individual functions, for now however I look to see my scripts working, especially on a fresh machine.
+To test the script, here's how I currently do it:
+```bash
+./run-docker.sh
+```
+Done! This small script will build the docker image from the `Dockerfile`<br>
+and run it afterwards.
+
 
 ### Command-Line Arguments
 - `--debug`: Sets the log level to DEBUG.

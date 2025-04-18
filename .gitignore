@@ -14,4 +14,3 @@ logs/
 *.pid
 *.out
 *.err
-Dockerfile
