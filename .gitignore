@@ -1,0 +1,17 @@
+# Ignore config and logs folders
+config/
+logs/
+
+# Common .gitignore entries for bash scripting
+*.sh~
+*.bak
+*.swp
+*.swo
+.DS_Store
+*.log
+*.tmp
+*.lock
+*.pid
+*.out
+*.err
+Dockerfile
