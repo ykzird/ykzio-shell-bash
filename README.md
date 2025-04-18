@@ -84,7 +84,7 @@ Run the main script:
 ```
 
 ## Testing
-Testing needs to be worked out more to test individual functions, for now however I look to see my scripts working, especially on a fresh machine.
+Testing needs to be worked out more to test individual functions, for now however I like to see my scripts working, especially on a fresh machine.
 To test the script, here's how I currently do it:
 ```bash
 ./docker-run.sh

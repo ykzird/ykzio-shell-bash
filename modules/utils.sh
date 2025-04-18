@@ -65,8 +65,11 @@ wait_for_apt_lock() {
 }
 
 show_header() {
+    BLUE="#003eff"
+    PURPLE="#c100ff"
+
     clear
-    gum style --border normal --padding "1 2" --align center "${SCRIPT_NAME} - v3.0.0"
+    gum style --foreground="$BLUE" --border-foreground="$PURPLE" --border double --align center --width 50 --margin "1 2" --padding "2 4" "${SCRIPT_NAME} - v3.0.0"
 
     {
         echo ""
