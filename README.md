@@ -46,7 +46,6 @@ scripts/
     install-gum.sh
     run-docker.sh
 .env
-Dockerfile
 ```
 
 ### Key Files
